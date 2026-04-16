@@ -1,0 +1,16 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+.env
+afectados_*.csv
+
+# Node
+node_modules/
+frontend/dist/
+frontend/.vite/
+
+# System
+.DS_Store
+.gemini/
+.system_generated/

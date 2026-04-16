@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sector Analyzer Pro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <aside class="sidebar">
+            <div class="logo">
+                <span class="icon">📡</span>
+                <h1>Sector Analyzer</h1>
+            </div>
+            
+            <div class="upload-section">
+                <input type="file" id="csv-upload" accept=".csv" hidden>
+                <label for="csv-upload" class="upload-btn">
+                    <span class="btn-icon">📁</span>
+                    Subir Archivo CSV
+                </label>
+                <p class="file-info" id="file-info">Ningún archivo seleccionado</p>
+            </div>
+
+            <nav class="zone-nav">
+                <h3>Sectores Detectados</h3>
+                <div id="zone-list" class="zone-list">
+                    <p class="empty-state">Sube un archivo para ver los sectores</p>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="search-container">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="search-input" placeholder="Buscar por calle, sector o nombre...">
+                </div>
+                <div class="status-badge" id="data-status">Esperando datos...</div>
+            </header>
+
+            <section class="dashboard">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-label">Total Clientes</span>
+                        <span class="stat-value" id="total-clients">0</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Zonas Detectadas</span>
+                        <span class="stat-value" id="total-zones">0</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Columna Direcc.</span>
+                        <span class="stat-value" id="detected-col">-</span>
+                    </div>
+                </div>
+
+                <div class="results-container">
+                    <div class="results-header">
+                        <h2>Lista de Clientes</h2>
+                        <button id="copy-list" class="secondary-btn">Copiar Lista</button>
+                    </div>
+                    <div class="table-wrapper">
+                        <table id="clients-table">
+                            <thead>
+                                <tr id="table-headers">
+                                    <th>Nombre</th>
+                                    <th>Dirección</th>
+                                </tr>
+                            </thead>
+                            <tbody id="clients-body">
+                                <tr>
+                                    <td colspan="2" class="empty-table">Sube un archivo CSV para comenzar el análisis</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script type="module" src="/main.ts"></script>
+</body>
+</html>
